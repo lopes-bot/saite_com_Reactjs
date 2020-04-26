@@ -7,7 +7,7 @@ class Tasks extends Component {
     return (
       <div>
         {this.props.tasks.map((task) => (
-          <Task task={task} key={task.id} />
+          <Task task={task} key={task.id} deleteTask={this.props.deleteTask} />
         ))}
       </div>
     );

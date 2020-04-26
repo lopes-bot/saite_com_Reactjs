@@ -21,11 +21,20 @@ class App extends Component {
     });
     console.log("tag", this.state.tasks);
   };
+
+  deleteTask = (id) => {
+    const newTask = this.state.tasks.filter((task) => task.id !== id);
+    this.setState({
+      tasks: newTask,
+    });
+  };
+
+  checkDone = () => {};
   render() {
     return (
       <div>
         <TaskForm addTask={this.addTask} />
-        <Tasks tasks={this.state.tasks} />
+        <Tasks tasks={this.state.tasks} deleteTask={this.deleteTask} />
       </div>
     );
   }
