@@ -7,7 +7,9 @@ class TaskForm extends Component {
   };
 
   onSubmit = (e) => {
-    console.log(this.state);
+    var title = this.state.title;
+    var description = this.state.description;
+    this.props.addTask(title, description);
     e.preventDefault();
   };
 
